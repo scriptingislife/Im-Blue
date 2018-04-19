@@ -1,0 +1,5 @@
+---
+- name: Replace firewall rules on hosts
+  hosts: linux
+  tasks:
+    - name: SSH Access

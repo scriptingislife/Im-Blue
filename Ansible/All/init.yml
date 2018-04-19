@@ -31,3 +31,10 @@
         key: {{ init_key }}
         state: present
         exclusive: no  
+  hosts: wakanda
+  tasks:
+    - name: Install nmap
+      package:
+        name: nmap
+        state: present
+      

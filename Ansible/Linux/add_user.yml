@@ -1,0 +1,17 @@
+---
+- name: Add a new linux user
+  hosts: linux
+  tasks:
+    - name: Add user
+      user:
+        name: '{{ username }}'
+        shell: /bin/bash
+        groups: sudo
+      notify: Add key
+
+  handlers:
+    - name: Add key
+      authorized_key:
+        user: '{{ username }}'
+        key: "{{ lookup('file', 'keys/id_rsa.pub') }}"
+        state: present

@@ -1,0 +1,8 @@
+---
+- name: Remove a kernel module
+  hosts: linux
+  tasks:
+    - name: Remove the kernel module
+      modprobe:
+        name: '{{ module }}'
+        state: absent

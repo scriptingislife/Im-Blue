@@ -1,0 +1,9 @@
+---
+- name: Add a new Windows user
+  hosts: windows
+  tasks:
+    - name: Add user
+      win_user:
+        user: '{{ username }}'
+        password: '{{ passwd }}'
+        state: present
