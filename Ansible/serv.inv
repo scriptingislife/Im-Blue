@@ -1,7 +1,7 @@
 [windows]
-gotham ansible_ssh_host=172.24.6.10
-smallville ansible_ssh_host=172.24.6.12
-krypton
+ad ansible_ssh_host=172.24.6.10
+winrm ansible_ssh_host=172.24.6.12
+iis
 
 
 [windows:vars]
@@ -12,9 +12,9 @@ ansible_winrm_server_cert_validation=ignore
 
 
 [linux]
-wakanda ansible_ssh_host=172.24.6.11
-atlantis ansible_ssh_host=172.24.6.13
-asgard
+graylog ansible_ssh_host=172.24.6.11
+postfix ansible_ssh_host=172.24.6.13
+mysql
 
 [linux:vars]
 ansible_ssh_port=22
