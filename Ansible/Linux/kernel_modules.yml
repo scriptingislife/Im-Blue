@@ -1,6 +1,10 @@
 ---
 - name: Remove a kernel module
   hosts: linux
+  become: true
+  vars_prompt:
+    - name: module
+      prompt: "Module name"
   tasks:
     - name: Remove the kernel module
       modprobe:

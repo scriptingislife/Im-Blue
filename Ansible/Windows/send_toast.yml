@@ -1,6 +1,10 @@
 ---
 - name: Send a toast message
   gather_facts: no
+  vars_prompt:
+    - name: message
+      prompt: "Message"
+      default: "Hello red team"
   hosts: windows
   tasks:
      - name: "Send Red Team a message"

@@ -1,6 +1,10 @@
 ---
 - name: Add a new linux user
   hosts: linux
+  vars_prompt:
+    - name: username
+      prompt: "Username"
+      confirm: yes
   tasks:
     - name: Add user
       user:

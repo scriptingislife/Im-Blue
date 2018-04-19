@@ -1,6 +1,13 @@
 ---
 - name: Add exclusive authorized key
   hosts: linux
+  become: yes
+  vars_prompt:
+    - name: ssh_user
+      prompt: "Username"
+      confirm: yes
+    - name: ssh_key
+      prompt: "Public key text"
   tasks:
     - name: Add exclusive authorized key
       authorized_key:

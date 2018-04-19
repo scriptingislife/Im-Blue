@@ -1,1 +1,1 @@
-init_passwd: 'changemeplz'
+bad_ips: ['10.2.8.10', '10.2.8.12']

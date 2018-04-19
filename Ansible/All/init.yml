@@ -1,5 +1,10 @@
 ---
 - name: Initial Ansible tasks to run after being set up
+  vars_prompt:
+    - name: "init_passwd"
+      prompt: "Initial password"
+      default: "13371337Ab!"
+      confirm: yes
   hosts: windows
   tasks:
     - name: Install Sysinternals

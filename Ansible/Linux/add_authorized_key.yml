@@ -1,6 +1,12 @@
 ---
 - name: Add new authorized_key to Linux hosts
   hosts: linux
+  become: yes
+  vars_prompt:
+    - name: "ssh_user"
+      prompt: "Username"
+    - name: "ssh_key"
+      prompt: "Public key text"
   tasks:
     - name: Add key
       authorized_key:
