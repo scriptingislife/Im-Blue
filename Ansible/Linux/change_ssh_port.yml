@@ -1,0 +1,17 @@
+---
+- name: Change SSH to nonstandard port
+- hosts: linux
+  become: yes
+  tasks:
+    - name: Edit sshd_config
+      lineinfile:
+        dest: "/etc/ssh/sshd_config"
+        regex: "^Port"
+        line: "Port {{ ssh_port }}"
+      notify: "Restart sshd"
+
+  handlers:
+    - name: Restart sshd 
+      service:
+        name: sshd
+        state: restarted

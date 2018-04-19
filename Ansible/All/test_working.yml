@@ -1,0 +1,5 @@
+---
+- name: Test if Ansible is working on all hosts
+  hosts: all
+  tasks:
+    ping:

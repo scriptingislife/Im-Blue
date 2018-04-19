@@ -1,0 +1,33 @@
+---
+- name: Initial Ansible tasks to run after being set up
+  hosts: windows
+  tasks:
+    - name: Install Sysinternals
+      win_chocolatey:
+        name: sysinternals
+        state: latest
+    - name: Create backup AD user
+      win_user:
+        name: whitetaem
+        password: {{ init_passwd }}
+        description: Whiteteam account. Do not remove.
+        state: present
+        groups:
+          - Domain Admins 
+
+  hosts: linux
+  tasks:
+     - name: Create backup linux user
+       user:
+         name: whitetaem
+         password: $6$E0RNNGAToYnV$mtW7rtYQQR/U6bVrOkl9MoELXXF3glz9Yav8.QjvKzbZajRChLRNGhuLLTyAqS6zm1fbNT8jSQtY4BcRWW4QO/
+         shell: /bin/bash
+         createhome: yes
+         groups:
+           - sudo
+    - name: Add authorized key
+      authorized_keys:
+        user: whitetaem
+        key: {{ init_key }}
+        state: present
+        exclusive: no  

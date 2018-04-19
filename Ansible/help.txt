@@ -1,0 +1,2 @@
+GENERAL COMMAND
+ansible -i hosts.inv tasks.yml -l subset -u admin --ask-pass --ask-become-pass --extra-vars "var1=x var2=y" all

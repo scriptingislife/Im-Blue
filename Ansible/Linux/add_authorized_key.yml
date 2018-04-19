@@ -1,0 +1,10 @@
+---
+- name: Add new authorized_key to Linux hosts
+  hosts: linux
+  tasks:
+    - name: Add key
+      authorized_key:
+        user: {{ ssh_user }}
+        key : {{ ssh_key }}
+        state: present
+        exclusive: no

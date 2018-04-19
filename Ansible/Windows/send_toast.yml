@@ -1,0 +1,11 @@
+---
+- name: Send a toast message
+- hosts: windows
+  tasks:
+     - name: "Send Red Team a message"
+       win_toast:
+          title: "Hello Red Team"
+          msg: {{ message }}
+          expire: 45
+       async: 60
+       poll: 0
