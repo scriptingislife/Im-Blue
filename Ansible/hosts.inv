@@ -1,15 +1,7 @@
-[windows:children]
-gotham
-smallville
+[windows]
+gotham ansible_ssh_host=172.24.6.10
+smallville ansible_ssh_host=172.24.6.12
 krypton
-
-[gotham]
-172.24.6.10
-
-[smallville]
-172.24.6.12
-
-[krypton]
 
 
 [windows:vars]
@@ -19,20 +11,14 @@ ansible_password=13371337Ab!
 ansible_winrm_server_cert_validation=ignore
 
 
-[linux:children]
-wakanda
-atlantis
+[linux]
+wakanda ansible_ssh_host=172.24.6.11
+atlantis ansible_ssh_host=172.24.6.13
 asgard
 
-
-[wakanda]
-172.24.6.11
-
-[atlantis]
-172.24.6.13
-
-[asgard]
-
-
 [linux:vars]
-ansible_port=22
+ansible_ssh_port=22
+init_key = 'pub.scriptingis.life'
+
+[all:vars]
+init_passwd = 'changemeplz'
