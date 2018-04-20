@@ -1,0 +1,14 @@
+---
+- name: Remove a user
+  hosts: linux
+  become: yes
+  vars_prompt:
+    - name: username
+      prompt: "Username"
+      confirm: yes
+      secret: no
+  tasks:
+    user:
+      name: "{{ username }}"
+      state: absent
+      remove: yes
