@@ -1,6 +1,6 @@
 ---
 - name: Change SSH to nonstandard port
-- hosts: linux
+  hosts: linux
   become: yes
   vars_prompt:
     - name: "ssh_port"
