@@ -1,5 +1,14 @@
 ---
-- name: Test if Ansible is working on all hosts
-  hosts: all
+- name: Test if Ansible is working on linux hosts
+  gather_facts: no
+  hosts: linux
   tasks:
-    ping:
+    - name: Ping linux hosts
+      ping:
+
+- name: Test if Ansible is working on windows hosts
+  gather_facts: no
+  hosts: windows
+  tasks:
+    - name: Ping windows hosts
+      win_ping:
