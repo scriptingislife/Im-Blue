@@ -5,6 +5,7 @@
     - name: message
       prompt: "Message"
       default: "Hello red team"
+      secret: no
   hosts: windows
   tasks:
      - name: "Send Red Team a message"
