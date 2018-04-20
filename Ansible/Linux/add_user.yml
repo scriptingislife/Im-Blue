@@ -1,10 +1,11 @@
 ---
 - name: Add a new linux user
   hosts: linux
+  become: yes
   vars_prompt:
     - name: username
       prompt: "Username"
-      confirm: yes
+      secret: no
   tasks:
     - name: Add user
       user:
