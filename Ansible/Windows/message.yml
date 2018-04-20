@@ -1,0 +1,13 @@
+---
+- name: Send a message
+  hosts: windows
+  vars_prompt:
+    - name: message
+      prompt: "Message"
+      private: no
+  tasks:
+    - name: Send message to all users
+      win_msg:
+        display_seconds: 10
+        msg: '{{ message }}'
+        wait: no

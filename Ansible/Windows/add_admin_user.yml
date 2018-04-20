@@ -16,4 +16,5 @@
         password: '{{ passwd }}'
         groups:
           - Users
+          - Administrators
         state: present
