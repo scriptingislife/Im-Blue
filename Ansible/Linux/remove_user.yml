@@ -9,7 +9,7 @@
       secret: no
   tasks:
     - name: Remove the user account
-    user:
-      name: "{{ username }}"
-      state: absent
-      remove: yes
+      user:
+        name: "{{ username }}"
+        state: absent
+        remove: yes
