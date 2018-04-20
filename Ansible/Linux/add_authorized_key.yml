@@ -5,12 +5,14 @@
   vars_prompt:
     - name: "ssh_user"
       prompt: "Username"
+      private: no
     - name: "ssh_key"
       prompt: "Public key text"
+      private: no
   tasks:
     - name: Add key
       authorized_key:
-        user: {{ ssh_user }}
-        key : {{ ssh_key }}
+        user: '{{ ssh_user }}'
+        key : '{{ ssh_key }}'
         state: present
         exclusive: no
