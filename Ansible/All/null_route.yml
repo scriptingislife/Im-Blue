@@ -1,0 +1,14 @@
+---
+- name: Null route IP
+  vars_prompt:
+    - name: bad_ip
+      prompt: "Block IP"
+      secret: no
+      confirm: no
+  hosts: linux
+  tasks:
+    shell:
+
+  hosts: windows
+  tasks:
+    win_route:

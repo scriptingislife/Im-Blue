@@ -1,0 +1,27 @@
+<h1>Getting Started</h1>
+<p>This will guide you through using the Im Blue repository to set up a host with incident response software.</p>
+<h2>Downloads</h2>
+<p>The repository can be downloaded as a zip file from a shortened domain.</p>
+<h3>Linux</h3>
+<p><code>wget ir.scriptingis.life -O master.zip &amp;&amp; unzip master.zip &amp;&amp; cd Im-Blue-master</code></p>
+<h3>Windows</h3>
+<p>Windows users can download the file with a web browser and unzip the file through the file explorer.</p>
+<h2>Ansible</h2>
+<h3>Linux</h3>
+<p>Ansible uses SSH keys to control clients. You'll need to add the public key to the <code>authorized_keys</code> file for each user.
+<code>curl -L pub.scriptingis.life &gt;&gt; authorized_keys</code></p>
+<h3>Windows</h3>
+<p>There is a PowerShell script in <code>Im-Blue-master/Scripts/Powershell/Ansible-Setup.ps1</code>.
+Right click the script and select <em>Run with PowerShell</em>.</p>
+<h2>Other Software</h2>
+<h3>Linux</h3>
+<h4>Maltrail</h4>
+<p>Maltrail is a two part sensor and server written in Python which listens for malicious traffic and logs it.</p>
+<h5>Setup</h5>
+<p>To run the sensor on boot, edit <code>/etc/rc.local</code>. Add the line <code>cd $INSTALL_DIR &amp;&amp; python sensor.py &amp;</code> below everything except if the <code>exit 0</code> at the end.
+To run the sensor now, enter a screen session with the <code>screen</code> command then run <code>python sensor.py &amp;</code>. Leave the shell with <code>Ctrl + A, D</code>. This keeps the program running until the system reboots.</p>
+<h3>Windows</h3>
+<h4>Glasswire</h4>
+<p>Glasswire is a Windows program that alerts when an application connects to the internet for the first time.</p>
+<h5>Setup</h5>
+<p>Run <code>Im-Blue-master/Programs/GlassWireSetup.exe</code> and click <em>Next</em> until it's installed and running.</p>
