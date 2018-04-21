@@ -10,3 +10,5 @@ lsmod
 echo "\n\n"
 ls /etc/init.d/
 echo "\n\n"
+w
+echo "\n\n"
