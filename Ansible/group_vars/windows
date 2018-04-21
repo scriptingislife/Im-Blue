@@ -1,6 +1,6 @@
 ansible_connection: winrm
 ansible_user: Administrator
 # can't use on command line with --ask-pass
-ansible_password: 13371337Ab!
+ansible_password: 1972groundHogbox
 ansible_winrm_server_cert_validation: ignore
 
