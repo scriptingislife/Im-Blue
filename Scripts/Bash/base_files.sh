@@ -10,5 +10,7 @@ lsmod
 echo "\n\n"
 ls /etc/init.d/
 echo "\n\n"
-w
+lastlog
+echo "\n\n"
+last
 echo "\n\n"
