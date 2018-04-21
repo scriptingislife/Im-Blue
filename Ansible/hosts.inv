@@ -1,9 +1,9 @@
 [windows]
 gotham ansible_ssh_host=10.2.6.10
-smallville ansible_ssh_host=10.2.6.12
-krypton
+smallville ansible_ssh_host=10.2.6.20
 
 [linux]
-wakanda ansible_ssh_host=10.2.6.11
-atlantis ansible_ssh_host=10.2.6.13
-asgard
+wakanda ansible_ssh_host=10.2.6.40
+atlantis ansible_ssh_host=10.2.6.30
+asgard ansible_ssh_host=172.21.6.10
+krypton ansible_ssh_host=172.21.6.20
