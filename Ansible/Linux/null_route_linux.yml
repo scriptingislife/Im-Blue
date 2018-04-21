@@ -1,0 +1,12 @@
+---
+- name: No no route IP
+  become: yes
+  vars_prompt:
+    - name: bad_ip
+      prompt: "Block IP"
+      private: no
+      confirm: yes
+  hosts: linux
+  tasks:
+    - name: Block host on linux
+      command: "ip r a {{ bad_ip }}/32 via 127.0.0.1"

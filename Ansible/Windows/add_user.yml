@@ -4,14 +4,15 @@
   vars_prompt:
     - name: username
       prompt: "Username"
-      secret: no
+      private: no
     - name: passwd
       prompt: "Password"
-      secret: yes
+      private: yes
       confirm: yes
   tasks:
     - name: Add user
       win_user:
+        name: '{{ username }}'
         user: '{{ username }}'
         password: '{{ passwd }}'
         groups:

@@ -5,9 +5,10 @@
     - name: message
       prompt: "Message"
       private: no
+      confirm: no
   tasks:
     - name: Send message to all users
       win_msg:
         display_seconds: 10
         msg: '{{ message }}'
-        wait: no
+        wait: yes

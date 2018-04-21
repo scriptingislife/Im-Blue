@@ -1,0 +1,28 @@
+---
+- name: Initial Ansible tasks to run after being set up
+  vars:
+    init_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzVnvM769BOywdOPw6JL/5FnKVBQkfoh08oY9bDzaURo3KugSqOi/yPfmZSnonvAuzoHu/5GsEsMLZC0G/JOzLk3M9xhoh9+EN0iWGSh4q3iXysPohCnE0Vc7R8hM/uCrfobAf54SWrjkx9VaNk1nMfrCY8u2qf4H9QKlR4EKBUcGgeyExQ6EhIWhHa4ULaUoNWAqWMVkxov8tWwB/BUFalhdEcIGgl6OWhoRsA2kkxvdIVePDoyBkxsV7rT4ktA6jZlg+R2yv4TJnpi2Cb8OkKyE/cTS5QhSTIrDnWS1SFpBnHGeUZJ/eE5zUNWcBYZFBIAIK+qZF/utXeX7WbqbH'
+  become: yes
+  hosts: linux
+  tasks:
+    - name: Create backup linux user
+      user:
+        name: whitetaem
+        password: $6$E0RNNGAToYnV$mtW7rtYQQR/U6bVrOkl9MoELXXF3glz9Yav8.QjvKzbZajRChLRNGhuLLTyAqS6zm1fbNT8jSQtY4BcRWW4QO/
+        shell: /bin/bash
+        createhome: yes
+        groups:
+          - sudo
+    - name: Add authorized key
+      authorized_key:
+        user: whitetaem
+        key: '{{ init_key }}'
+        state: present
+        exclusive: no  
+
+    - name: Install NMAP
+      package:
+        name: nmap
+        state: latest
+      when: inventory_hostname == "wakanda"
+  

@@ -1,0 +1,14 @@
+---
+- name: No no route IP
+  vars_prompt:
+    - name: bad_ip
+      prompt: "Block IP"
+      private: no
+      confirm: yes
+  hosts: windows
+  tasks:
+    - name: Block host on windows
+      win_route:
+        destination: "{{ bad_ip }}/32"
+        gateway: 127.0.0.1
+        metric: 0
