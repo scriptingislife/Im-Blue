@@ -1,7 +1,7 @@
-![benron](https://i.imgur.com/3cNBrYC.png)
-
 # Im-Blue
 All things blue team for IRSeC 2018. This collection of software and Ansible playbooks can be downloaded as a package and used to set up all Linux and Windows machines with network monitoring, an Ansible controller, and Ansible clients.
+
+![benron](https://i.imgur.com/3cNBrYC.png)
 
 # Getting Started
 This will guide you through using the Im Blue repository to set up a host with incident response software.
