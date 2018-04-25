@@ -6,6 +6,11 @@ All things blue team for IRSeC 2018. This collection of software and Ansible pla
 # Getting Started
 This will guide you through using the Im Blue repository to set up a host with incident response software.
 
+#### Note:
+All `*.scriptingis.life` subdomains most likely will be removed after the competition.
+`ir.scriptingis.life` redirects to the master zip file for this repository. You can also just clone the repo.
+`pub.scriptignis.life` links to the raw text of a public key the clients will use for Ansible. Make your own using [make_keys.sh](Ansible/Linux/keys/make_keys.sh)
+
 ## Downloads
 The repository can be downloaded as a zip file from a shortened domain.
 ### Linux
